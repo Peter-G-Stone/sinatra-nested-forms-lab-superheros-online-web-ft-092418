@@ -1,0 +1,27 @@
+
+<h1>Create a Team and Heroes!</h1>
+
+<% Team.clear %>
+<body>
+    
+<form method="post" action="/teams">
+    Team Name:
+    <input id="team[name]" type="text"  name="team[name]"> <br>
+    Team Motto:
+    <input id="team[motto]" type="text"  name="team[motto]"> <br>
+
+    <% i = 0%>
+    <%3.times do%>
+
+        <h2>Hero <%=i+1%></h2>
+        Hero's Name:
+        <input id="member<%=i+1%>_name" type="text"  name="team[heroes][][name]"> <br>
+        Hero's Power:
+        <input id="member<%=i+1%>_power" type="text" name="team[heroes][][power]"> <br>
+        Hero's Biography:
+        <input id="member<%=i+1%>_bio" type="text"  name="team[heroes][][biography]"> <br>        
+        <% i += 1%>
+    <%end%>
+    <input type="submit" value="submit">
+</form>
+</body>

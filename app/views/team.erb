@@ -1,3 +1,17 @@
+<% team = Team.all.first %>
+
+<h1><%=team.name%></h1>
+
+<h2>Team Motto: <%=team.motto%></h2>
 
 
+<%team.heroes.each do |hero|%>
 
+    <h2>Hero Name: <%=hero.name%></h2>
+    <p>
+    Hero Power:
+    <%=hero.power%> <br>
+    Hero Biography:
+    <%=hero.biography%> <br>        
+    </p>
+<%end%>
